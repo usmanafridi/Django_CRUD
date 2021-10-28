@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+</head>
+
+<body>
+    <h3>Add Product</h3>
+
+    {% comment %} <form method="get"> {% endcomment %}
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Product Name" name="product-name">
+        <br/>
+        <input type="date" placeholder="Product Price" name="product-price">
+        <br/>
+        <textarea placeholder="Product Description" name="product-description" disabled></textarea>
+        <br/>
+        <input type="number" value="0" min="1" max="10" step=".01" placeholder="Product Quantity" name="product-quantity">
+        <br/>
+        <input id="cb" type="checkbox" value="Check Me">
+        <label for="cb">I agree with your whatever terms & conditions, which I never dare to read</label>
+        <br/>
+        <br/>
+        <input id="cb" type="checkbox" value="Check Me" checked>
+        <label for="cb">I want updates whenever your product changes</label>
+        <br/>
+        <select name="product-category">
+            <option value="-">Select Category</option>
+            <option value="mobiles">Mobiles</option>
+            <option value="laptops">Laptops</option>
+            <option value="cameras">Cameras</option>
+        </select>
+        <br/>
+        <input type="submit">
+    </form>
+</body>
+
+</html>

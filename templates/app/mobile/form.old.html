@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Mobile</title>
+</head>
+
+<body>
+    <h1>Add or Update a Mobile</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Enter name for mobile" value="{{mobile.name}}">
+        <br />
+        <input type="text" name="company" placeholder="Enter company for mobile" value="{{mobile.company}}">
+        <br />
+        <select name="color">
+            <option value="black">Black</option>
+            <option value="white">White</option>
+            <option value="gray">Gray</option>
+            <option value="silver">Silver</option>
+            <option value="gold">Gold</option>
+            <option value="pink">Pink</option>
+        </select>
+        <br />
+        <input type="number" value="{{mobile.price}}" min="0" name="price" placeholder="Enter price for mobile">
+        <br />
+
+        <input id="isNew" type="checkbox" name="is_new" checked="{{mobile.is_new}}">
+        <label for="isNew"> Is this mobile new </label>
+        <br />
+        <textarea name="feature" placeholder="Enter features for mobile">{{mobile.features}}</textarea>
+        <br />
+        <input type="submit" value="Save Mobile">
+    </form>
+</body>
+
+</html>

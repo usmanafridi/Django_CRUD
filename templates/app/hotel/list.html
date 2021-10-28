@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings</title>
+</head>
+
+<body>
+
+    <div style="background-image: url('E:\jmm-practice-main\images\hotel.jpg');">
+    
+
+    <a href="{% url 'booking-add' %}">Add New Booking</a>
+    <h1>Total Bookings: <small> {{count}}  found</small></h1>
+
+
+    {% for booking in usman %}
+    <a href="{% url 'booking-detail' booking.id %}">{{booking.name}}</a>
+    
+    <br />
+    {% empty %}
+    <p>Currently there are no bookings in the database</p>
+    {% endfor %}
+</body>
+
+
+</html>

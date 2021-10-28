@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Detail</title>
+</head>
+
+<body>
+    <a href="{% url 'mobile-edit' mobile.id %}">Edit</a>
+    <a href="{% url 'mobile-delete' mobile.id %}">Delete</a>
+    <h2>
+        {{mobile.name}}
+        <small>(
+            {% if mobile.is_new %}
+            Daba Pack
+            {% else %}
+            2nd Hand
+            {% endif %}
+            )
+        </small>
+    </h2>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>{{mobile.id}}</td>
+        </tr>
+        <tr>
+            <td>Company</td>
+            <td>{{mobile.company}}</td>
+        </tr>
+        <tr>
+            <td>Color</td>
+            <td>{{mobile.color}}</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>{{mobile.price}}</td>
+        </tr>
+        <tr>
+            <td>Features</td>
+            <td>{{mobile.features}}</td>
+        </tr>
+    </table>
+</body>
+
+</html>

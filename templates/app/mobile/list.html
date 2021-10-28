@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobiles</title>
+</head>
+
+<body>
+    <a href="{% url 'mobile-add' %}">Add New Mobile</a>
+    <h1>List of All Mobiles <small>Total {{count}} mobiles found</small></h1>
+
+
+    {% for mobile in usman %}
+    <a href="{% url 'mobile-detail' mobile.id %}">{{mobile.name}} </a>
+    
+    <br />
+    {% empty %}
+    <p>Currently there are no mobiles in database</p>
+    {% endfor %}
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+{% comment %} Template File {% endcomment %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMM Training Session</title>
+</head>
+
+<body>
+
+    {% if product_list %}
+    <h2>You are looking for <b>{{category_name}}</b></h2>
+    <h2><small>{{result_count}} products found in category</small></h2>
+
+    <ul>
+        {% for product in product_list  %}
+        <li>{{product}}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h2>It seems we are KANGAAAAL</h2>
+    {% endif %}
+
+</body>
+
+</html>
